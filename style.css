@@ -101,3 +101,33 @@ body {
     .hub-header h1 { font-size: 2rem; }
     .calc-grid { grid-template-columns: 1fr; }
 }
+
+.search-container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#calc-search {
+    width: 100%;
+    max-width: 500px;
+    padding: 16px 24px;
+    border: 1.5px solid var(--border);
+    border-radius: 50px; /* Rounded pill shape for a modern look */
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+#calc-search:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(9, 132, 227, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Class to hide cards that don't match search */
+.hidden-card {
+    display: none !important;
+}
