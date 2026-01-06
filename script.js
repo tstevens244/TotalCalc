@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const query = e.target.value.toLowerCase().trim();
 
         cards.forEach(card => {
-            // Get text content from title and description
+            // Check the visible text + the keywords in the data-title attribute
             const title = card.querySelector('h3').textContent.toLowerCase();
             const description = card.querySelector('p').textContent.toLowerCase();
+            const keywords = card.getAttribute('data-title').toLowerCase();
 
-            // Check if query exists in title or description
-            if (title.includes(query) || description.includes(query)) {
+            if (title.includes(query) || description.includes(query) || keywords.includes(query)) {
                 card.classList.remove('hidden-card');
             } else {
                 card.classList.add('hidden-card');
