@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total-Calc | Simple & Modern Calculators</title>
+    <title>Total-Calc | All-in-One Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,47 +11,44 @@
     <main class="hub-container">
         <header class="hub-header">
             <h1>Total-Calc</h1>
-            <p>A collection of minimal, precise, and easy-to-use tools.</p>
+            <p>Precise, minimal, and modern utility calculators.</p>
         </header>
 
-    <section class="search-container">
-        <input type="text" id="calc-search" placeholder="Search for a tool..." autocomplete="off">
-    </section>
-    <section class="calc-grid">
+        <section class="search-container">
+            <input type="text" id="calc-search" placeholder="Search for a tool (e.g., 'mortgage')..." autocomplete="off">
         </section>
-</main>
-        
-        <section class="calc-grid">
-            <a href="./bmi/" class="calc-card">
+
+        <section class="calc-grid" id="calc-grid">
+            <a href="./bmi/" class="calc-card" data-title="bmi body mass index health weight">
                 <div class="icon">⚖️</div>
                 <h3>BMI Calculator</h3>
                 <p>Check your Body Mass Index and health category.</p>
                 <span class="btn-text">Open Tool →</span>
             </a>
 
-            <a href="./mortgage/" class="calc-card">
+            <a href="./mortgage/" class="calc-card" data-title="mortgage house home loan interest finance">
                 <div class="icon">🏠</div>
                 <h3>Mortgage</h3>
-                <p>Estimate monthly house payments and interest.</p>
+                <p>Estimate monthly house payments and interest rates.</p>
                 <span class="btn-text">Open Tool →</span>
             </a>
 
-            <a href="./auto-loan/" class="calc-card">
+            <a href="./auto-loan/" class="calc-card" data-title="auto loan car payment vehicle finance">
                 <div class="icon">🚗</div>
                 <h3>Auto Loan</h3>
                 <p>Calculate monthly car payments and total cost.</p>
                 <span class="btn-text">Open Tool →</span>
             </a>
 
-            <a href="./compound-interest/" class="calc-card">
+            <a href="./compound-interest/" class="calc-card" data-title="compound interest savings investment growth money">
                 <div class="icon">📈</div>
                 <h3>Compound Interest</h3>
-                <p>Visualize how your savings grow over time.</p>
+                <p>Visualize how your savings grow over many years.</p>
                 <span class="btn-text">Open Tool →</span>
             </a>
-
-            </section>
+        </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
