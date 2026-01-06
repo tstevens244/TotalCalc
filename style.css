@@ -3,23 +3,16 @@
     --card-bg: #ffffff;
     --text-main: #2d3436;
     --text-light: #636e72;
-    --accent: #0984e3; /* Default Blue */
+    --accent: #0984e3;
     --border: #dfe6e9;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    
-    /* Category Colors */
     --underweight: #0984e3;
     --healthy: #00b894;
     --overweight: #fdcb6e;
     --obese: #d63031;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
 body {
     background-color: var(--bg-color);
@@ -28,7 +21,6 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    color: var(--text-main);
 }
 
 .calculator-card {
@@ -40,19 +32,9 @@ body {
     box-shadow: var(--shadow);
 }
 
-header h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
+header h1 { font-size: 1.5rem; margin-bottom: 8px; }
+header p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 30px; }
 
-header p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 30px;
-}
-
-/* Unit Toggle */
 .unit-toggle {
     display: flex;
     background: var(--bg-color);
@@ -62,16 +44,9 @@ header p {
 }
 
 .unit-toggle button {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    border-radius: 9px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    background: transparent;
-    transition: all 0.3s ease;
-    color: var(--text-light);
+    flex: 1; border: none; padding: 10px; border-radius: 9px;
+    cursor: pointer; font-weight: 600; background: transparent;
+    transition: all 0.3s ease; color: var(--text-light);
 }
 
 .unit-toggle button.active {
@@ -80,111 +55,27 @@ header p {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Form Styles */
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.field-row {
-    display: flex;
-    gap: 15px;
-}
-
-.field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
-}
-
-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+.input-group { display: flex; flex-direction: column; gap: 20px; }
+.field-row { display: flex; gap: 15px; }
+.field { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+label { font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; }
 
 input {
-    padding: 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s;
+    padding: 14px; border: 1.5px solid var(--border);
+    border-radius: 12px; font-size: 1rem; outline: none;
 }
 
-input:focus {
-    border-color: var(--accent);
-}
+input:focus { border-color: var(--accent); }
 
 #calc-btn {
-    width: 100%;
-    margin-top: 30px;
-    padding: 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--text-main);
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
+    width: 100%; margin-top: 30px; padding: 16px; border: none;
+    border-radius: 12px; background: var(--text-main); color: white;
+    font-weight: 600; cursor: pointer;
 }
 
-#calc-btn:hover {
-    opacity: 0.9;
-}
-
-#calc-btn:active {
-    transform: scale(0.98);
-}
-
-/* Results Section */
 .hidden { display: none; }
-
-.divider {
-    height: 1.5px;
-    background: var(--border);
-    margin: 30px 0;
-}
-
-.result-display {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.result-label {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-#bmi-value {
-    display: block;
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    margin: 5px 0;
-}
-
-#bmi-category {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--accent);
-}
-
-#bmi-explanation {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    text-align: center;
-}
-
-@media (max-width: 480px) {
-    .calculator-card {
-        padding: 30px 20px;
-    }
-}
+.divider { height: 1.5px; background: var(--border); margin: 30px 0; }
+.result-display { text-align: center; margin-bottom: 20px; }
+#bmi-value { display: block; font-size: 3.5rem; font-weight: 800; color: var(--accent); }
+#bmi-category { font-weight: 700; color: var(--accent); }
+#bmi-explanation { font-size: 0.9rem; line-height: 1.6; color: var(--text-light); text-align: center; }
