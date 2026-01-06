@@ -1,0 +1,96 @@
+:root {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #2d3436;
+    --text-light: #636e72;
+    --accent: #0984e3;
+    --border: #dfe6e9;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --underweight: #0984e3;
+    --healthy: #00b894;
+    --overweight: #fdcb6e;
+    --obese: #d63031;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator-card {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+header h1 { font-size: 1.5rem; margin-bottom: 8px; }
+header p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 30px; }
+
+.unit-toggle {
+    display: flex;
+    background: var(--bg-color);
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.unit-toggle button {
+    flex: 1; border: none; padding: 10px; border-radius: 9px;
+    cursor: pointer; font-weight: 600; background: transparent;
+    transition: all 0.3s ease; color: var(--text-light);
+}
+
+.unit-toggle button.active {
+    background: var(--card-bg);
+    color: var(--text-main);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.input-group { display: flex; flex-direction: column; gap: 20px; }
+.field-row {
+    display: flex;
+    gap: 15px;
+    width: 100%; /* Ensure the row takes full width */
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;      /* This forces them to share the space 50/50 */
+    min-width: 0; /* Prevents long inputs from pushing the container out */
+}
+
+input {
+    width: 100%;  /* Ensures the input fills the .field container only */
+    padding: 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; /* Crucial: includes padding in the width calculation */
+}
+
+input:focus { border-color: var(--accent); }
+
+#calc-btn {
+    width: 100%; margin-top: 30px; padding: 16px; border: none;
+    border-radius: 12px; background: var(--text-main); color: white;
+    font-weight: 600; cursor: pointer;
+}
+
+.hidden { display: none; }
+.divider { height: 1.5px; background: var(--border); margin: 30px 0; }
+.result-display { text-align: center; margin-bottom: 20px; }
+#bmi-value { display: block; font-size: 3.5rem; font-weight: 800; color: var(--accent); }
+#bmi-category { font-weight: 700; color: var(--accent); }
+#bmi-explanation { font-size: 0.9rem; line-height: 1.6; color: var(--text-light); text-align: center; }
