@@ -132,14 +132,4 @@ body {
     display: none !important;
 }
 
-.search-container {
-    display: block !important;
-    visibility: visible !important;
-    margin: 20px auto !important;
-    text-align: center;
-}
 
-#calc-search {
-    border: 2px solid #000 !important; /* Thick black border so it's impossible to miss */
-    display: inline-block !important;
-}
