@@ -4,64 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator | Minimalist Tool</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .calculator-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .unit-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .category-underweight { color: #0ea5e9; }
+        .category-normal { color: #10b981; }
+        .category-overweight { color: #f59e0b; }
+        .category-obese { color: #ef4444; }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
     <main class="calculator-card">
-        <header>
-            <h1>BMI Calculator</h1>
-            <p>Enter your details below to calculate your Body Mass Index.</p>
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">BMI Calculator</h1>
+            <p class="text-gray-500 text-sm">Enter your details below to calculate your Body Mass Index.</p>
         </header>
 
-        <section class="unit-toggle">
-            <button id="metric-btn">Metric</button>
-            <button id="imperial-btn" class="active">Imperial</button>
+        <!-- Unit Toggle -->
+        <section class="flex bg-gray-100 p-1 rounded-xl mb-6">
+            <button id="metric-btn" class="unit-btn flex-1 py-2 rounded-lg text-sm font-semibold transition-all duration-200">Metric</button>
+            <button id="imperial-btn" class="unit-btn active flex-1 py-2 rounded-lg text-sm font-semibold transition-all duration-200">Imperial</button>
         </section>
 
-        <form id="bmi-form">
-            <div id="metric-inputs" class="input-group hidden">
+        <form id="bmi-form" class="space-y-4">
+            <!-- Metric Inputs -->
+            <div id="metric-inputs" class="input-group hidden space-y-4">
                 <div class="field">
-                    <label for="height-cm">Height (cm)</label>
-                    <input type="number" id="height-cm" placeholder="180" step="0.1">
+                    <label for="height-cm" class="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
+                    <input type="number" id="height-cm" placeholder="180" step="0.1" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
                 </div>
                 <div class="field">
-                    <label for="weight-kg">Weight (kg)</label>
-                    <input type="number" id="weight-kg" placeholder="75" step="0.1">
+                    <label for="weight-kg" class="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
+                    <input type="number" id="weight-kg" placeholder="75" step="0.1" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
                 </div>
             </div>
 
-            <div id="imperial-inputs" class="input-group">
-                <div class="field-row">
-                    <div class="field">
-                        <label for="height-ft">Feet</label>
-                        <input type="number" id="height-ft" placeholder="5">
+            <!-- Imperial Inputs -->
+            <div id="imperial-inputs" class="input-group space-y-4">
+                <div class="flex gap-4">
+                    <div class="flex-1">
+                        <label for="height-ft" class="block text-sm font-medium text-gray-700 mb-1">Feet</label>
+                        <input type="number" id="height-ft" placeholder="5" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
                     </div>
-                    <div class="field">
-                        <label for="height-in">Inches</label>
-                        <input type="number" id="height-in" placeholder="10">
+                    <div class="flex-1">
+                        <label for="height-in" class="block text-sm font-medium text-gray-700 mb-1">Inches</label>
+                        <input type="number" id="height-in" placeholder="10" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
                     </div>
                 </div>
                 <div class="field">
-                    <label for="weight-lb">Weight (lbs)</label>
-                    <input type="number" id="weight-lb" placeholder="165" step="0.1">
+                    <label for="weight-lb" class="block text-sm font-medium text-gray-700 mb-1">Weight (lbs)</label>
+                    <input type="number" id="weight-lb" placeholder="165" step="0.1" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all">
                 </div>
             </div>
 
-            <button type="submit" id="calc-btn">Calculate BMI</button>
+            <button type="submit" id="calc-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-200 transition-all active:scale-[0.98] mt-4">
+                Calculate BMI
+            </button>
         </form>
 
-        <section id="result-container" class="result-section hidden">
-            <div class="divider"></div>
-            <div class="result-display">
-                <span class="result-label">Your BMI is</span>
-                <span id="bmi-value">--</span>
-                <span id="bmi-category">--</span>
+        <!-- Result Display -->
+        <section id="result-container" class="result-section hidden mt-8 pt-8 border-t border-gray-100">
+            <div class="text-center">
+                <span class="block text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">Your BMI is</span>
+                <span id="bmi-value" class="block text-5xl font-extrabold text-gray-800 mb-2">--</span>
+                <span id="bmi-category" class="inline-block px-4 py-1 rounded-full text-sm font-bold bg-gray-100 mb-4">--</span>
             </div>
-            <p id="bmi-explanation"></p>
+            <p id="bmi-explanation" class="text-gray-600 text-sm text-center leading-relaxed"></p>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const metricBtn = document.getElementById('metric-btn');
+            const imperialBtn = document.getElementById('imperial-btn');
+            const metricInputs = document.getElementById('metric-inputs');
+            const imperialInputs = document.getElementById('imperial-inputs');
+            const bmiForm = document.getElementById('bmi-form');
+            const resultContainer = document.getElementById('result-container');
+            const bmiValueDisplay = document.getElementById('bmi-value');
+            const bmiCategoryDisplay = document.getElementById('bmi-category');
+            const bmiExplanation = document.getElementById('bmi-explanation');
+
+            let currentUnit = 'imperial';
+
+            // Switch to Metric
+            metricBtn.addEventListener('click', () => {
+                currentUnit = 'metric';
+                metricBtn.classList.add('active');
+                imperialBtn.classList.remove('active');
+                metricInputs.classList.remove('hidden');
+                imperialInputs.classList.add('hidden');
+                resultContainer.classList.add('hidden');
+            });
+
+            // Switch to Imperial
+            imperialBtn.addEventListener('click', () => {
+                currentUnit = 'imperial';
+                imperialBtn.classList.add('active');
+                metricBtn.classList.remove('active');
+                imperialInputs.classList.remove('hidden');
+                metricInputs.classList.add('hidden');
+                resultContainer.classList.add('hidden');
+            });
+
+            // Calculation Logic
+            bmiForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let bmi = 0;
+
+                if (currentUnit === 'metric') {
+                    const height = parseFloat(document.getElementById('height-cm').value) / 100;
+                    const weight = parseFloat(document.getElementById('weight-kg').value);
+
+                    if (height > 0 && weight > 0) {
+                        bmi = weight / (height * height);
+                    }
+                } else {
+                    const feet = parseFloat(document.getElementById('height-ft').value) || 0;
+                    const inches = parseFloat(document.getElementById('height-in').value) || 0;
+                    const weight = parseFloat(document.getElementById('weight-lb').value);
+                    const totalInches = (feet * 12) + inches;
+
+                    if (totalInches > 0 && weight > 0) {
+                        bmi = (weight / (totalInches * totalInches)) * 703;
+                    }
+                }
+
+                if (bmi > 0) {
+                    displayResult(bmi);
+                }
+            });
+
+            function displayResult(bmi) {
+                const roundedBmi = bmi.toFixed(1);
+                bmiValueDisplay.textContent = roundedBmi;
+                
+                let category = "";
+                let explanation = "";
+                let colorClass = "";
+
+                if (bmi < 18.5) {
+                    category = "Underweight";
+                    explanation = "A BMI of less than 18.5 indicates that you are underweight, so you may need to put on some weight. You are recommended to ask your doctor or a dietitian for advice.";
+                    colorClass = "category-underweight";
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    category = "Healthy Weight";
+                    explanation = "A BMI of 18.5-24.9 indicates that you are at a healthy weight for your height. By maintaining a healthy weight, you lower your risk of developing serious health problems.";
+                    colorClass = "category-normal";
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    category = "Overweight";
+                    explanation = "A BMI of 25-29.9 indicates that you are slightly overweight. You may be advised to lose some weight for health reasons. You are recommended to talk to your doctor or a dietitian for advice.";
+                    colorClass = "category-overweight";
+                } else {
+                    category = "Obese";
+                    explanation = "A BMI of over 30 indicates that you are heavily overweight. Your health may be at risk if you do not lose weight. You are recommended to talk to your doctor or a dietitian for advice.";
+                    colorClass = "category-obese";
+                }
+
+                bmiCategoryDisplay.textContent = category;
+                bmiCategoryDisplay.className = `inline-block px-4 py-1 rounded-full text-sm font-bold mb-4 ${colorClass} bg-opacity-10`;
+                bmiExplanation.textContent = explanation;
+                
+                resultContainer.classList.remove('hidden');
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    </script>
 </body>
 </html>
