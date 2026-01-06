@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Minimalist Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Hello, World!</h1>
-        <p>This is my website built from scratch.</p>
+
+    <main class="calculator-card">
+        <header>
+            <h1>BMI Calculator</h1>
+            <p>Enter your details below to calculate your Body Mass Index.</p>
+        </header>
+
+        <section class="unit-toggle">
+            <button id="metric-btn" class="active">Metric</button>
+            <button id="imperial-btn">Imperial</button>
+        </section>
+
+        <form id="bmi-form">
+            <div id="metric-inputs" class="input-group">
+                <div class="field">
+                    <label for="height-cm">Height (cm)</label>
+                    <input type="number" id="height-cm" placeholder="180" step="0.1">
+                </div>
+                <div class="field">
+                    <label for="weight-kg">Weight (kg)</label>
+                    <input type="number" id="weight-kg" placeholder="75" step="0.1">
+                </div>
+            </div>
+
+            <div id="imperial-inputs" class="input-group hidden">
+                <div class="field-row">
+                    <div class="field">
+                        <label for="height-ft">Feet</label>
+                        <input type="number" id="height-ft" placeholder="5">
+                    </div>
+                    <div class="field">
+                        <label for="height-in">Inches</label>
+                        <input type="number" id="height-in" placeholder="10">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="weight-lb">Weight (lbs)</label>
+                    <input type="number" id="weight-lb" placeholder="165" step="0.1">
+                </div>
+            </div>
+
+            <button type="submit" id="calc-btn">Calculate BMI</button>
+        </form>
+
+        <section id="result-container" class="result-section hidden">
+            <div class="divider"></div>
+            <div class="result-display">
+                <span class="result-label">Your BMI is</span>
+                <span id="bmi-value">24.5</span>
+                <span id="bmi-category">Healthy Weight</span>
+            </div>
+            <p id="bmi-explanation">
+                A BMI of 18.5–24.9 indicates you are at a healthy weight for your height. 
+                Maintaining a healthy weight can reduce the risk of serious health conditions.
+            </p>
+        </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
