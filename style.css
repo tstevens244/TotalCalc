@@ -56,13 +56,28 @@ header p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 30px; }
 }
 
 .input-group { display: flex; flex-direction: column; gap: 20px; }
-.field-row { display: flex; gap: 15px; }
-.field { display: flex; flex-direction: column; gap: 8px; flex: 1; }
-label { font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; }
+.field-row {
+    display: flex;
+    gap: 15px;
+    width: 100%; /* Ensure the row takes full width */
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;      /* This forces them to share the space 50/50 */
+    min-width: 0; /* Prevents long inputs from pushing the container out */
+}
 
 input {
-    padding: 14px; border: 1.5px solid var(--border);
-    border-radius: 12px; font-size: 1rem; outline: none;
+    width: 100%;  /* Ensures the input fills the .field container only */
+    padding: 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; /* Crucial: includes padding in the width calculation */
 }
 
 input:focus { border-color: var(--accent); }
