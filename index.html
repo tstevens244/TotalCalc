@@ -3,76 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TotalCalc | Professional Utility Hub</title>
+    <title>Total-Calc | Utility Directory</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main class="hub-container">
         <header class="hub-header">
-            <div class="logo">TotalCalc</div>
-            <div class="search-container">
+            <h1 class="logo">TotalCalc<span>.net</span></h1>
+            <div class="search-box">
                 <input type="text" id="calc-search" placeholder="Search 200+ calculators..." autocomplete="off">
             </div>
         </header>
 
-        <div class="main-layout">
-            <div class="calc-directory" id="calc-directory">
-                
-                <section class="calc-section">
-                    <div class="section-title">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                        Financial Calculators
-                    </div>
-                    <div class="link-grid">
-                        <a href="./mortgage/" class="tool-link" data-tags="mortgage house loan finance interest">Mortgage Calculator</a>
-                        <a href="./loan/" class="tool-link" data-tags="loan credit debt">Loan Calculator</a>
-                        <a href="./auto-loan/" class="tool-link" data-tags="car auto vehicle transport">Auto Loan Calculator</a>
-                        <a href="./interest/" class="tool-link" data-tags="compound interest savings money">Compound Interest</a>
-                        <a href="./retirement/" class="tool-link" data-tags="retire 401k savings">Retirement Planner</a>
-                        <a href="./investment/" class="tool-link" data-tags="stocks roi return">Investment Calc</a>
-                    </div>
-                </section>
-
-                <section class="calc-section">
-                    <div class="section-title">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        Health & Fitness
-                    </div>
-                    <div class="link-grid">
-                        <a href="./bmi/" class="tool-link" data-tags="bmi body mass index health weight">BMI Calculator</a>
-                        <a href="./calorie/" class="tool-link" data-tags="calories food diet burn">Calorie Calculator</a>
-                        <a href="./body-fat/" class="tool-link" data-tags="fat percentage fitness">Body Fat Calculator</a>
-                        <a href="./bmr/" class="tool-link" data-tags="bmr metabolism energy">BMR Calculator</a>
-                    </div>
-                </section>
-
-                <section class="calc-section">
-                    <div class="section-title">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M5 12h14m-12 7l10-14m0 14l-10-14"/></svg>
-                        Math & Algebra
-                    </div>
-                    <div class="link-grid">
-                        <a href="./scientific/" class="tool-link" data-tags="math science advanced">Scientific Calculator</a>
-                        <a href="./fraction/" class="tool-link" data-tags="fraction math divide">Fraction Calculator</a>
-                        <a href="./percentage/" class="tool-link" data-tags="percent math discount">Percentage Calculator</a>
-                        <a href="./statistics/" class="tool-link" data-tags="stats mean median variance">Statistics Calc</a>
-                    </div>
-                </section>
-            </div>
-
-            <aside class="hub-sidebar">
-                <div class="sidebar-box">
-                    <h4>Trending Tools</h4>
-                    <ul class="sidebar-list">
-                        <li><a href="#">Inflation Calculator</a></li>
-                        <li><a href="#">Age Calculator</a></li>
-                        <li><a href="#">Salary to Hourly</a></li>
-                        <li><a href="#">GPA Calculator</a></li>
-                    </ul>
+        <div class="directory-grid">
+            <section class="calc-section">
+                <div class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    Financial Calculators
                 </div>
-            </aside>
+                <div class="link-list">
+                    <a href="./mortgage/" class="tool-link" data-tags="house home loan interest">Mortgage Calculator</a>
+                    <a href="./loan/" class="tool-link" data-tags="credit debt">Loan Calculator</a>
+                    <a href="./auto-loan/" class="tool-link" data-tags="car vehicle">Auto Loan Calculator</a>
+                    <a href="./compound-interest/" class="tool-link" data-tags="savings growth">Compound Interest</a>
+                    <a href="./retirement/" class="tool-link" data-tags="401k pension">Retirement Planner</a>
+                    <a href="./investment/" class="tool-link" data-tags="stocks roi">Investment Calc</a>
+                </div>
+            </section>
+
+            <section class="calc-section">
+                <div class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health & Fitness
+                </div>
+                <div class="link-list">
+                    <a href="./bmi/" class="tool-link" data-tags="weight body mass">BMI Calculator</a>
+                    <a href="./calorie/" class="tool-link" data-tags="diet food burn">Calorie Calculator</a>
+                    <a href="./body-fat/" class="tool-link" data-tags="fitness percentage">Body Fat Calculator</a>
+                    <a href="./bmr/" class="tool-link" data-tags="metabolism energy">BMR Calculator</a>
+                </div>
+            </section>
+
+            <section class="calc-section">
+                <div class="section-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    Math & Algebra
+                </div>
+                <div class="link-list">
+                    <a href="./scientific/" class="tool-link">Scientific Calculator</a>
+                    <a href="./fraction/" class="tool-link">Fraction Calculator</a>
+                    <a href="./percentage/" class="tool-link">Percentage Calculator</a>
+                    <a href="./statistics/" class="tool-link">Statistics Calc</a>
+                </div>
+            </section>
         </div>
     </main>
 
