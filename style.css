@@ -72,6 +72,51 @@ body {
     text-decoration: underline;
 }
 
+/* Container to center the search bar */
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* The specific Search Bar formatting */
+#calc-search {
+    /* 1. Reset defaults */
+    appearance: none;
+    -webkit-appearance: none;
+    
+    /* 2. Sizing */
+    width: 100%;
+    max-width: 550px;
+    padding: 16px 28px;
+    
+    /* 3. The "Pill" Shape & Border */
+    border: 1px solid #dfe1e5;
+    border-radius: 100px;
+    background-color: #ffffff;
+    
+    /* 4. Font Styling */
+    font-size: 1.1rem;
+    color: #202124;
+    outline: none;
+    
+    /* 5. Shadow and Transition */
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Hover and Focus effects */
+#calc-search:hover {
+    box-shadow: 0 1px 8px rgba(32, 33, 36, 0.2);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+#calc-search:focus {
+    box-shadow: 0 1px 8px rgba(32, 33, 36, 0.2);
+    border-color: #2255ff;
+}
+
 /* Mobile Fix: On small screens, they will naturally stack again */
 @media (max-width: 600px) {
     .directory-grid {
