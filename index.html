@@ -3,50 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total-Calc | All-in-One Tools</title>
+    <title>Total-Calc | Professional Utility Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main class="hub-container">
         <header class="hub-header">
-            <h1>Total-Calc</h1>
-            <p>Precise, minimal, and modern utility calculators.</p>
+            <div class="logo">Total-Calc<span>.net</span></div>
+            <div class="search-container">
+                <input type="text" id="calc-search" placeholder="Search 200+ calculators..." autocomplete="off">
+            </div>
         </header>
 
-        <section class="search-container">
-            <input type="text" id="calc-search" placeholder="Search for a tool (e.g., 'mortgage')..." autocomplete="off">
-        </section>
+        <div class="main-layout">
+            <div class="calc-directory" id="calc-directory">
+                
+                <section class="calc-section">
+                    <div class="section-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                        Financial Calculators
+                    </div>
+                    <div class="link-grid">
+                        <a href="./mortgage/" class="tool-link" data-tags="mortgage house loan finance interest">Mortgage Calculator</a>
+                        <a href="./loan/" class="tool-link" data-tags="loan credit debt">Loan Calculator</a>
+                        <a href="./auto-loan/" class="tool-link" data-tags="car auto vehicle transport">Auto Loan Calculator</a>
+                        <a href="./interest/" class="tool-link" data-tags="compound interest savings money">Compound Interest</a>
+                        <a href="./retirement/" class="tool-link" data-tags="retire 401k savings">Retirement Planner</a>
+                        <a href="./investment/" class="tool-link" data-tags="stocks roi return">Investment Calc</a>
+                    </div>
+                </section>
 
-        <section class="calc-grid" id="calc-grid">
-            <a href="./bmi/" class="calc-card" data-title="bmi body mass index health weight">
-                <div class="icon">⚖️</div>
-                <h3>BMI Calculator</h3>
-                <p>Check your Body Mass Index and health category.</p>
-                <span class="btn-text">Open Tool →</span>
-            </a>
+                <section class="calc-section">
+                    <div class="section-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        Health & Fitness
+                    </div>
+                    <div class="link-grid">
+                        <a href="./bmi/" class="tool-link" data-tags="bmi body mass index health weight">BMI Calculator</a>
+                        <a href="./calorie/" class="tool-link" data-tags="calories food diet burn">Calorie Calculator</a>
+                        <a href="./body-fat/" class="tool-link" data-tags="fat percentage fitness">Body Fat Calculator</a>
+                        <a href="./bmr/" class="tool-link" data-tags="bmr metabolism energy">BMR Calculator</a>
+                    </div>
+                </section>
 
-            <a href="./mortgage/" class="calc-card" data-title="mortgage house home loan interest finance">
-                <div class="icon">🏠</div>
-                <h3>Mortgage</h3>
-                <p>Estimate monthly house payments and interest rates.</p>
-                <span class="btn-text">Open Tool →</span>
-            </a>
+                <section class="calc-section">
+                    <div class="section-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M5 12h14m-12 7l10-14m0 14l-10-14"/></svg>
+                        Math & Algebra
+                    </div>
+                    <div class="link-grid">
+                        <a href="./scientific/" class="tool-link" data-tags="math science advanced">Scientific Calculator</a>
+                        <a href="./fraction/" class="tool-link" data-tags="fraction math divide">Fraction Calculator</a>
+                        <a href="./percentage/" class="tool-link" data-tags="percent math discount">Percentage Calculator</a>
+                        <a href="./statistics/" class="tool-link" data-tags="stats mean median variance">Statistics Calc</a>
+                    </div>
+                </section>
+            </div>
 
-            <a href="./auto-loan/" class="calc-card" data-title="auto loan car payment vehicle finance">
-                <div class="icon">🚗</div>
-                <h3>Auto Loan</h3>
-                <p>Calculate monthly car payments and total cost.</p>
-                <span class="btn-text">Open Tool →</span>
-            </a>
-
-            <a href="./compound-interest/" class="calc-card" data-title="compound interest savings investment growth money">
-                <div class="icon">📈</div>
-                <h3>Compound Interest</h3>
-                <p>Visualize how your savings grow over many years.</p>
-                <span class="btn-text">Open Tool →</span>
-            </a>
-        </section>
+            <aside class="hub-sidebar">
+                <div class="sidebar-box">
+                    <h4>Trending Tools</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#">Inflation Calculator</a></li>
+                        <li><a href="#">Age Calculator</a></li>
+                        <li><a href="#">Salary to Hourly</a></li>
+                        <li><a href="#">GPA Calculator</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <script src="script.js"></script>
