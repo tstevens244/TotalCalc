@@ -1,20 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('calc-search');
-    const cards = document.querySelectorAll('.calc-card');
+    const sections = document.querySelectorAll('.calc-section');
+    const tools = document.querySelectorAll('.tool-link');
 
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
 
-        cards.forEach(card => {
-            // Check the visible text + the keywords in the data-title attribute
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
-            const keywords = card.getAttribute('data-title').toLowerCase();
+        sections.forEach(section => {
+            let sectionHasMatch = false;
+            const links = section.querySelectorAll('.tool-link');
 
-            if (title.includes(query) || description.includes(query) || keywords.includes(query)) {
-                card.classList.remove('hidden-card');
+            links.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const tags = link.getAttribute('data-tags').toLowerCase();
+
+                if (text.includes(query) || tags.includes(query)) {
+                    link.classList.remove('hidden');
+                    sectionHasMatch = true;
+                } else {
+                    link.classList.add('hidden');
+                }
+            });
+
+            // Hide the entire section if no tools inside match
+            if (sectionHasMatch) {
+                section.classList.remove('hidden');
             } else {
-                card.classList.add('hidden-card');
+                section.classList.add('hidden');
             }
         });
     });
