@@ -3,8 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total-Calc | Utility Directory</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TotalCalc.net | Professional Utility Hub</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary: #0056b3;
+            --bg: #f4f7f9;
+            --border: #d1d9e0;
+            --text: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 40px 10px;
+        }
+
+        /* HEADER & SEARCH */
+        .hub-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #calc-search {
+            width: 100%;
+            padding: 15px 25px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            outline: none;
+        }
+
+        /* DIRECTORY LAYOUT (THE CALCULATOR.NET LOOK) */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on mobile */
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .directory-grid { grid-template-columns: 1fr 1fr; } /* Two columns on desktop */
+        }
+
+        .calc-section {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            background: #eee;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* FORCE LINKS INTO COLUMNS */
+        .link-list {
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two mini-columns inside each box */
+            gap: 8px 15px;
+        }
+
+        .tool-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+
+        .hidden { display: none !important; }
+    </style>
 </head>
 <body>
 
@@ -12,54 +121,64 @@
         <header class="hub-header">
             <h1 class="logo">TotalCalc<span>.net</span></h1>
             <div class="search-box">
-                <input type="text" id="calc-search" placeholder="Search 200+ calculators..." autocomplete="off">
+                <input type="text" id="calc-search" placeholder="Search 200+ calculators...">
             </div>
         </header>
 
         <div class="directory-grid">
             <section class="calc-section">
                 <div class="section-title">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    Financial Calculators
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    Financial
                 </div>
                 <div class="link-list">
-                    <a href="./mortgage/" class="tool-link" data-tags="house home loan interest">Mortgage Calculator</a>
-                    <a href="./loan/" class="tool-link" data-tags="credit debt">Loan Calculator</a>
-                    <a href="./auto-loan/" class="tool-link" data-tags="car vehicle">Auto Loan Calculator</a>
-                    <a href="./compound-interest/" class="tool-link" data-tags="savings growth">Compound Interest</a>
-                    <a href="./retirement/" class="tool-link" data-tags="401k pension">Retirement Planner</a>
-                    <a href="./investment/" class="tool-link" data-tags="stocks roi">Investment Calc</a>
+                    <a href="#" class="tool-link">Mortgage</a>
+                    <a href="#" class="tool-link">Loan Calc</a>
+                    <a href="#" class="tool-link">Auto Loan</a>
+                    <a href="#" class="tool-link">Compound</a>
+                    <a href="#" class="tool-link">Retirement</a>
+                    <a href="#" class="tool-link">Investment</a>
                 </div>
             </section>
 
             <section class="calc-section">
                 <div class="section-title">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    Health & Fitness
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health
                 </div>
                 <div class="link-list">
-                    <a href="./bmi/" class="tool-link" data-tags="weight body mass">BMI Calculator</a>
-                    <a href="./calorie/" class="tool-link" data-tags="diet food burn">Calorie Calculator</a>
-                    <a href="./body-fat/" class="tool-link" data-tags="fitness percentage">Body Fat Calculator</a>
-                    <a href="./bmr/" class="tool-link" data-tags="metabolism energy">BMR Calculator</a>
-                </div>
-            </section>
-
-            <section class="calc-section">
-                <div class="section-title">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    Math & Algebra
-                </div>
-                <div class="link-list">
-                    <a href="./scientific/" class="tool-link">Scientific Calculator</a>
-                    <a href="./fraction/" class="tool-link">Fraction Calculator</a>
-                    <a href="./percentage/" class="tool-link">Percentage Calculator</a>
-                    <a href="./statistics/" class="tool-link">Statistics Calc</a>
+                    <a href="#" class="tool-link">BMI Calc</a>
+                    <a href="#" class="tool-link">Calorie</a>
+                    <a href="#" class="tool-link">Body Fat</a>
+                    <a href="#" class="tool-link">BMR</a>
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        const searchInput = document.getElementById('calc-search');
+        const sections = document.querySelectorAll('.calc-section');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+
+            sections.forEach(section => {
+                const links = section.querySelectorAll('.tool-link');
+                let hasMatch = false;
+
+                links.forEach(link => {
+                    if (link.textContent.toLowerCase().includes(query)) {
+                        link.classList.remove('hidden');
+                        hasMatch = true;
+                    } else {
+                        link.classList.add('hidden');
+                    }
+                });
+
+                section.style.display = hasMatch ? 'flex' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>
